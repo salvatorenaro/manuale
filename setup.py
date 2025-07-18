@@ -2,10 +2,8 @@ import numpy as np
 import logging
 import sys
 from dataclasses import dataclass
-import platform
 
-""""IMPLEMENTAZIONE MANUALE DI MOLTE FUNZIONALITA DI NUMPY CODICE ANCORA IN FASE DI LAVORAZIONE"""
-
+"""" IMPLEMENTAZIONE MANUALE DI MOLTE FUNZIONALITA DI NUMPY CODICE ANCORA IN FASE DI LAVORAZIONE """
 
 
 
@@ -357,52 +355,3 @@ class AROUND:
 
 
 
-if __name__ == "__main__":
-    start = Clip()
-    start.clip()
-    enter = Transpose()
-    enter.transpose()
-    diagonale  = Diagonale()
-    diagonale.diagonale()
-    diagonale_da_sinistra = DiagonaleSinistra()
-    diagonale_da_sinistra.diagonale_sinistra()
-    max_value = Max()
-    max_value.max()
-    min_value = Min()
-    min_value.min()
-    negative_to_positive = from_negative_to_positive()
-    negative_to_positive.negative_to_positive()
-    somma = Sum()
-    somma.sum()
-    media = Mean()
-    media.mean()
-    std = StandardDeviation()
-    std.std()
-    prodotto_scalare = ProdottoScalare()
-    prodotto_scalare.prodotto_scalare()
-    sorted_array = SortedArray()
-    sorted_array.sorted_array()
-    sorted_array_reverse = SortedArrayReverse()
-    sorted_array_reverse.sorted_array_reverse()
-    zero = ZerosArray()
-    zero.zeros_array()
-    ones = OnesArray()
-    ones.zeros_array()
-    random  = RandomArray()
-    random.random_array()
-    full = FULL()
-    full.full()
-    arange = ARANGE()
-    arange.ARANGE()
-    log10 = LOG10()
-    log10.log10()
-    log = LOG()
-    log.log()
-    coseno = COS()
-    coseno.cos()
-    sqrt = SQRT()
-    sqrt.sqrt()
-    around = AROUND()
-    around.around()
-
-        
