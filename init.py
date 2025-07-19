@@ -1,3 +1,4 @@
+#Librerie
 import numpy as np
 import logging
 import sys
@@ -10,12 +11,29 @@ import geocoder
 import webbrowser
 from googletrans import Translator
 import locale
+from  pydantic import BaseModel
+from datetime import date
 
 
-"""IMPLEMENTAZIONE MANUALE DI MOLTE FUNZIONALITA DI NUMPY CODICE SVILUPPATO DA SALVATORE NARO ANCORA IN FASE DI SVILUPPO"""
 
 
-  
+"""IMPLEMENTAZIONE MANUALE DI MOLTE FUNZIONALITA  CODICE SVILUPPATO DA SALVATORE NARO"""
+
+#Metadati
+@dataclass
+class metadati(BaseModel):
+    @staticmethod
+    def metadati(autore =  "Salvatore Naro", descrizione = "Salvatore Naro è un programmatore specializzato in Ai e Designer" , data = date.today() ) ->None:
+            try:
+                autore  = autore
+                descrione  = descrizione
+                data =  data
+                print(f"Autore: {autore} , Descrizione: {descrione}, Data , {data}")
+            except Exception as e:
+                logging.error(f'Error {e}') 
+
+
+
 @dataclass
 class NumpyFunctions:        
 
@@ -390,10 +408,40 @@ class NumpyFunctions:
         except Exception as e:
               logging.error(f'Error {e}')
 
+    @staticmethod
+    def diagonale_margine_sinistro_basso_a_destra_in_alto():
+        try: 
+            x =  [[1,2,3], 
+                  [4,5,6],
+                  [7,8,9]]
+            print("Matrice: \n {}".format(x))
+            n = len(x)
+            for i in range(n):
+                    print("\n Matrice da sinistra basso a destra alto \n")
+                    print(x[ n - i - 1][i])
 
+        except Exception as e:
+            logging.error(f"Error {e}")
+    
 
+    @staticmethod
+    def diagonale_margine_destro_basso_a_sinistra_in_alto():
+        try: 
+            x =  [[1,2,3], 
+                  [4,5,6],
+                  [7,8,9]]
+            
+            n = len(x)
+            for i in range(n):
+                    print("\n Matrice da destra basso a sinistra alto \n")
+                    print(x[ n - i - 1][n - i - 1])
+
+        except Exception as e:
+            logging.error(f"Error {e}")
 
 if __name__ == "__main__":
+    Meta = metadati()
+    Meta.metadati()
     np_func = NumpyFunctions()
     np_func.traduzione('Benvenuto nel mio codice ')
     np_func.version_python()
@@ -420,3 +468,5 @@ if __name__ == "__main__":
     np_func.cos()
     np_func.sqrt()
     np_func.around()
+    np_func.diagonale_margine_destro_basso_a_sinistra_in_alto()
+    np_func.diagonale_margine_sinistro_basso_a_destra_in_alto()
